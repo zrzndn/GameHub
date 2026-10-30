@@ -1,0 +1,137 @@
+<UserControl x:Class="WindowsITToolkit.Games.TicTacToe.TicTacToeGameView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Focusable="True"
+             Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,18">
+            <StackPanel>
+                <TextBlock Text="TIC-TAC-TOE"
+                           FontSize="26"
+                           FontWeight="ExtraBold"
+                           Foreground="{StaticResource HubTextBrush}"/>
+                <TextBlock Text="A LOCAL TWO-PLAYER MATCH"
+                           Margin="0,4,0,0"
+                           FontSize="10"
+                           FontWeight="SemiBold"
+                           Foreground="{StaticResource HubMutedBrush}"/>
+            </StackPanel>
+        </Grid>
+
+        <ScrollViewer Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled">
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="12">
+                <Border Padding="18"
+                        CornerRadius="16"
+                        Background="{StaticResource HubCardBrush}"
+                        BorderBrush="{StaticResource HubBorderBrush}"
+                        BorderThickness="1"
+                        Effect="{StaticResource HubCardShadow}">
+                    <StackPanel>
+                        <TextBlock x:Name="TurnText"
+                                   Text="X's turn"
+                                   FontSize="22"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource HubAccentBrush}"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,2,0,14"/>
+                        <Viewbox MaxWidth="480"
+                                 MaxHeight="480"
+                                 Stretch="Uniform">
+                            <UniformGrid x:Name="BoardGrid"
+                                         Width="450"
+                                         Height="450"
+                                         Rows="3"
+                                         Columns="3">
+                                <Button Tag="0" Click="CellButton_Click" Style="{StaticResource HubButtonStyle}" Margin="5" FontSize="50" FontWeight="Bold"/>
+                                <Button Tag="1" Click="CellButton_Click" Style="{StaticResource HubButtonStyle}" Margin="5" FontSize="50" FontWeight="Bold"/>
+                                <Button Tag="2" Click="CellButton_Click" Style="{StaticResource HubButtonStyle}" Margin="5" FontSize="50" FontWeight="Bold"/>
+                                <Button Tag="3" Click="CellButton_Click" Style="{StaticResource HubButtonStyle}" Margin="5" FontSize="50" FontWeight="Bold"/>
+                                <Button Tag="4" Click="CellButton_Click" Style="{StaticResource HubButtonStyle}" Margin="5" FontSize="50" FontWeight="Bold"/>
+                                <Button Tag="5" Click="CellButton_Click" Style="{StaticResource HubButtonStyle}" Margin="5" FontSize="50" FontWeight="Bold"/>
+                                <Button Tag="6" Click="CellButton_Click" Style="{StaticResource HubButtonStyle}" Margin="5" FontSize="50" FontWeight="Bold"/>
+                                <Button Tag="7" Click="CellButton_Click" Style="{StaticResource HubButtonStyle}" Margin="5" FontSize="50" FontWeight="Bold"/>
+                                <Button Tag="8" Click="CellButton_Click" Style="{StaticResource HubButtonStyle}" Margin="5" FontSize="50" FontWeight="Bold"/>
+                            </UniformGrid>
+                        </Viewbox>
+                        <Grid Margin="0,16,0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="PLAYER X"
+                                           FontSize="10"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource HubMutedBrush}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="XScoreText"
+                                           Text="0"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource HubAccentBrush}"
+                                           HorizontalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="DRAWS"
+                                           FontSize="10"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource HubMutedBrush}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="DrawCountText"
+                                           Text="0"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource HubMutedBrush}"
+                                           HorizontalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="PLAYER O"
+                                           FontSize="10"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource HubMutedBrush}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="OScoreText"
+                                           Text="0"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           Foreground="{StaticResource HubSecondaryAccentBrush}"
+                                           HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                <WrapPanel HorizontalAlignment="Center"
+                           Margin="0,14,0,0">
+                    <Button Content="NEW ROUND"
+                            Click="NewRoundButton_Click"
+                            Height="42"
+                            MinWidth="130"
+                            Margin="0,0,8,8"
+                            Style="{StaticResource HubButtonPrimaryStyle}"/>
+                    <Button Content="RESET MATCH"
+                            Click="ResetMatchButton_Click"
+                            Height="42"
+                            MinWidth="130"
+                            Margin="0,0,8,8"
+                            Style="{StaticResource HubButtonStyle}"/>
+                    <Button Content="BACK TO LIBRARY"
+                            Click="BackButton_Click"
+                            Height="42"
+                            MinWidth="150"
+                            Margin="0,0,0,8"
+                            Style="{StaticResource HubButtonStyle}"/>
+                </WrapPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

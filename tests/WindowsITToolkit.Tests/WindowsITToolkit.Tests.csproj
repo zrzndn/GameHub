@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\GameEngine.cs" Link="GameEngine.cs" />
+    <Compile Include="..\..\GameState.cs" Link="GameState.cs" />
+    <Compile Include="..\..\HighScoreService.cs" Link="HighScoreService.cs" />
+    <Compile Include="..\..\Games\TicTacToe\TicTacToeEngine.cs" Link="Games\TicTacToe\TicTacToeEngine.cs" />
+    <Compile Include="..\..\Games\TwentyFortyEight\TwentyFortyEightEngine.cs" Link="Games\TwentyFortyEight\TwentyFortyEightEngine.cs" />
+    <Compile Include="..\..\Games\TwentyFortyEight\TwentyFortyEightBestScoreService.cs" Link="Games\TwentyFortyEight\TwentyFortyEightBestScoreService.cs" />
+    <Compile Include="..\..\LocalGameRecordStore.cs" Link="LocalGameRecordStore.cs" />
+    <Compile Include="..\..\Games\Minesweeper\MinesweeperCell.cs" Link="Games\Minesweeper\MinesweeperCell.cs" />
+    <Compile Include="..\..\Games\Minesweeper\MinesweeperEngine.cs" Link="Games\Minesweeper\MinesweeperEngine.cs" />
+    <Compile Include="..\..\Games\MemoryMatch\MemoryCard.cs" Link="Games\MemoryMatch\MemoryCard.cs" />
+    <Compile Include="..\..\Games\MemoryMatch\MemoryMatchEngine.cs" Link="Games\MemoryMatch\MemoryMatchEngine.cs" />
+    <Compile Include="..\..\Games\Pong\PongDifficulty.cs" Link="Games\Pong\PongDifficulty.cs" />
+    <Compile Include="..\..\Games\Pong\PongGameState.cs" Link="Games\Pong\PongGameState.cs" />
+    <Compile Include="..\..\Games\Pong\PongEngine.cs" Link="Games\Pong\PongEngine.cs" />
+    <Compile Include="..\..\Games\Pong\PongStatisticsService.cs" Link="Games\Pong\PongStatisticsService.cs" />
+    <Compile Include="..\..\GameCatalogItem.cs" Link="GameCatalogItem.cs" />
+    <Compile Include="..\..\HubSettingsService.cs" Link="HubSettingsService.cs" />
+  </ItemGroup>
+
+</Project>
